@@ -7,5 +7,5 @@ from rest_framework.response import Response
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
-        fields = ('url', 'first_name', 'last_name', 'username', 'email',
+        fields = ('pk', 'url', 'first_name', 'last_name', 'username', 'email',
                   'is_staff')
