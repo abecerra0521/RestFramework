@@ -23,6 +23,7 @@ from users.views import UserViewSet
 from rest_framework import routers
 from rest_framework.authtoken import views
 
+
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
 router.register(r'establishments', EstablishmentViewSet)
@@ -30,7 +31,7 @@ router.register(r'reservations', ReservationViewSet)
 router.register(r'stadiums', StadiumViewSet)
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path('api/', include(router.urls)),
     path('admin/', admin.site.urls),
     path('api-token-auth/', views.obtain_auth_token, name='api-token-auth'),
 ]

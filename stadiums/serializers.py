@@ -7,3 +7,4 @@ class StadiumSerializer(serializers.HyperlinkedModelSerializer):
         model = Stadium
         fields = ('id', 'type', 'rating', 'photo', 'description', 'cost',
                   'opening','closing','establishment')
+
