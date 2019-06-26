@@ -1,4 +1,5 @@
 from rest_framework import viewsets
+from django_filters.rest_framework import DjangoFilterBackend
 from stadiums.serializers import StadiumSerializer
 from stadiums.models import Stadium
 
@@ -7,3 +8,4 @@ from stadiums.models import Stadium
 class StadiumViewSet(viewsets.ModelViewSet):
     queryset = Stadium.objects.all()
     serializer_class = StadiumSerializer
+    filter_backends = (DjangoFilterBackend,)

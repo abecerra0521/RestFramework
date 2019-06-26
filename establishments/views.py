@@ -1,4 +1,5 @@
 from rest_framework import viewsets
+from django_filters.rest_framework import DjangoFilterBackend
 from establishments.serializers import EstablishmentSerializer
 from establishments.models import Establishment
 from stadiums.serializers import StadiumSerializer
@@ -11,6 +12,7 @@ from rest_framework.decorators import action
 class EstablishmentViewSet(viewsets.ModelViewSet):
     queryset = Establishment.objects.all()
     serializer_class = EstablishmentSerializer
+    filter_backends = (DjangoFilterBackend,)
 
     @action(methods=['get'], detail=True)
     def stadiums(self, request, pk=None):
