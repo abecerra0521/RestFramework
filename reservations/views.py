@@ -23,4 +23,3 @@ class ReservationViewSet(viewsets.ModelViewSet):
     serializer_class = ReservationSerializer
     filter_backends = (DjangoFilterBackend, )
     filter_class = ReservationFilter
-    # filterset_fields = ('date', 'user_id')

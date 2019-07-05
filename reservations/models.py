@@ -10,7 +10,11 @@ class Reservation(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     date = models.DateTimeField()
     rating = models.IntegerField()
-    stadium = models.ForeignKey(Stadium, on_delete=models.CASCADE)
+    stadium = models.ForeignKey(
+        Stadium,
+        on_delete=models.CASCADE,
+        related_name="reservations",
+    )
 
     class Meta:
         verbose_name = ("Reservation")
